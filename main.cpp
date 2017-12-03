@@ -37,7 +37,7 @@ const s32 MISSILE_TIME = 5000;
 const s32 LOCK_TIME = 1500;
 const s32 FLARES_TIME = 500;
 const s32 FLARES_COOLDOWN = 5000;
-const s32 DEATHSPHERE_SPEED = 10000;
+const s32 DEATHSPHERE_SPEED = 1000;
 const f32 DEATHSPHERE_RADIUS = 10000.0f;
 
 u32 then;
@@ -329,12 +329,12 @@ int main() {
 
             if (!player.balloon.alive) {
                 font->draw(L"Game Over - Press R to restart", core::rect<s32>(SCREEN_WIDTH/2 - 80, 10, 300, 10), video::SColor(255, 255, 255, 255));
-            } else if (enemiesAlive == 100) {
+            } else if (enemiesAlive == 50) {
                 font->draw("You Won!", core::rect<s32>(SCREEN_WIDTH/2 - 20, 10, 300, 10), video::SColor(255, 255, 255, 255));
             } else {
                 core::stringw text = "Balloons ";
                 text += enemiesAlive;
-                text += "/100";
+                text += "/50";
                 font->draw(text, core::rect<s32>(SCREEN_WIDTH/2 - 30, 10, 300, 10), video::SColor(255, 255, 255, 255));
             }
 

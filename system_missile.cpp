@@ -25,7 +25,6 @@ void shootMissile(Missile* missile, Balloon* target, core::vector3df startPos) {
         core::vector3df missileDist = startPos - target->node->getPosition();
         f32 timeToFlares = ((missileDist.getLength()/MISSILE_SPEED)/4)*1000;
         target->timeToFlares = now + timeToFlares;
-
     }
 }
 
@@ -54,6 +53,7 @@ void systemMissile(Missile* missile, f32 dt) {
             missile->node->setVisible(false);
             missile->alive = false;
             missile->target->node->setVisible(false);
+            enemiesAlive--;
         }
 
         // hit map

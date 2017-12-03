@@ -1,5 +1,7 @@
 void changePosition() {
     crate.node->setPosition(randPosition());
+    crate.node->setMaterialTexture(0, driver->getTexture("assets/crate.png"));
+    crate.node->setMaterialType(video::EMT_SOLID);
 }
 
 void createCrate() {
